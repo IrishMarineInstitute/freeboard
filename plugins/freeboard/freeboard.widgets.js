@@ -991,7 +991,8 @@
             {
                 name: "zlev",
                 display_name: "Zoom level",
-                type: "calculated"
+                type: "calculated",
+				default_value: "13"
             }
         ],
         newInstance: function (settings, newInstanceCallback) {
