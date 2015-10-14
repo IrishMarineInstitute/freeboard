@@ -845,6 +845,7 @@
                 var newLatLon = new google.maps.LatLng(currentPosition.lat, currentPosition.lon);
                 marker.setPosition(newLatLon);
                 map.panTo(newLatLon);
+				map.setZoom(currentPosition.zlev);
             }
         }
 
@@ -955,6 +956,9 @@
             else if (settingName == "lon") {
                 currentPosition.lon = newValue;
             }
+			else if (settingName == "zlev") {
+                currentPosition.zlev = newValue;
+            }
 
             updatePosition();
         }
@@ -982,6 +986,11 @@
             {
                 name: "lon",
                 display_name: "Longitude",
+                type: "calculated"
+            },
+            {
+                name: "zlev",
+                display_name: "Zoom level",
                 type: "calculated"
             }
         ],
